@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#cd "$(dirname "$0")"
+unamestr=`uname`
+archstr="undefined"
+if [[ "$unamestr" == "Linux" ]]; then
+archstr="glnxa64"
+elif [[ "$unamestr" == "Darwin" ]]; then
+archstr="maci64"
+else
+echo "Unknown platform"
+exit
+fi
+
+
+/mathworks/hub/3rdparty/R2016b/1615650/"$archstr"/nodejs/bin/node $(dirname "$0")/../dist/index "$@"
