@@ -37,7 +37,7 @@ var config = {
 if (!isProd) {
     config.devtool = 'sourcemap';
     config.plugins.push(
-        new webpack.BannerPlugin('require(\'source-map-support\').install();', { raw: true, entryOnly: false })
+        new webpack.BannerPlugin({banner: 'require(\'source-map-support\').install();', raw: true, entryOnly: false })
     );
 }
 
